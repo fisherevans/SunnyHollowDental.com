@@ -1,15 +1,15 @@
 @import 'config';
 
 @media screen {
-  @import 'base';
+  @import 'sheets/base';
   @media (max-width: $compact-size) {
-    @import 'compact';
+    @import 'sheets/compact';
     @media (max-width: $mobile-size) {
-      @import 'mobile';
+      @import 'sheets/mobile';
     }
   }
 }
 
 @media print {
-  @import 'print';
+  @import 'sheets/print';
 }
