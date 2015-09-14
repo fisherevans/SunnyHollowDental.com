@@ -1,0 +1,223 @@
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-style: normal;
+  margin-left: 0px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #dfe6f6;
+}
+
+.navigation, .header {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header {
+  background-color: #ffffff;
+}
+
+.header .browser-banner {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 990px;
+}
+
+.header .mobile-banner {
+  display: none;
+}
+
+.navigation {
+  background-color: #01969a;
+  border-top: 3px solid #006669;
+  border-bottom: 3px solid #006669;
+  font-size: 0;
+  z-index: 20;
+  white-space: nowrap;
+  box-shadow: 0 0 2px 0 #444;
+}
+
+.navigation .element {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border-right: 1px solid #007E82;
+}
+
+.navigation .element.first {
+  border-left: 1px solid #007E82;
+}
+
+.navigation .element a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 30px;
+  font-family: 'Open Sans', 'Arial', 'sans-serif';
+  font-size: 10.5pt;
+  font-weight: 300;
+  white-space: nowrap;
+  background-color: #01969a;
+  color: #ffffff;
+  -webkit-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  -moz-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  -ms-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  -o-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.navigation .element a:hover {
+  background-color: #007E82;
+}
+
+.navigation .element .sub-tree {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  padding-top: 3px;
+  width: auto;
+  max-height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
+  -moz-transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
+  -ms-transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
+  -o-transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
+  transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
+}
+
+.navigation .element:hover .sub-tree {
+  opacity: 1;
+}
+
+.navigation .element:hover .sub-tree-2 {
+  max-height: calc(41px * 2);
+}
+
+.navigation .element:hover .sub-tree-3 {
+  max-height: calc(41px * 3);
+}
+
+.navigation .element:hover .sub-tree-4 {
+  max-height: calc(41px * 4);
+}
+
+.navigation .element .sub-tree a {
+  position: relative;
+  display: block;
+  border: 1px solid #006669;
+  border-top-width: 0px;
+  text-align: left;
+}
+
+.page {
+  z-index: 10;
+  position: relative;
+  display: block;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px #444;
+  margin-bottom: 15px;
+}
+
+.content, .footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  border: 1px solid #006669;
+  border-top-width: 0px;
+}
+
+.content {
+  background-color: #ffffff;
+  font-size: 0;
+}
+
+.content .tile {
+  position: relative;
+  display: inline-block;
+  width: 44%;
+  margin: 3%;
+}
+
+.content h1, .content h2, .content h3 {
+  text-transform: uppercase;
+  font-family: 'Open Sans', 'Arial', 'sans-serif';
+}
+
+.content h1 {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.content p {
+  font-size: 14px;
+  font-family: 'Open Sans', 'Arial', 'sans-serif';
+}
+
+.content .tile img.fill {
+  width: 80%;
+  box-shadow: 0 0 3px 0 #000000;
+}
+
+.footer {
+  background-color: #5e9ea0;
+}
+
+/* ---------------- */
+
+.fadeColors {
+  -webkit-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  -moz-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  -ms-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  -o-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.noUserSelect {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+
+.alignTop {
+  vertical-align: top;
+}
+
+.alignMiddle {
+  vertical-align: middle;
+}
+
+.alignBottom {
+  vertical-align: bottom;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}

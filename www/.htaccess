@@ -1,0 +1,10 @@
+Satisfy Any
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTP_HOST} ^www\.sunnyhollowdental\.com [NC]
+  RewriteRule ^(.*)$ http://sunnyhollowdental.com/$1 [R=301,NC,L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+</IfModule>
