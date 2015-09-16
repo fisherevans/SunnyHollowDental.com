@@ -18,8 +18,7 @@ $app = new Lime\App();
 
 $parseDown = new ParsedownExtra();
 
-function get404()
-{
+function get404() {
     global $app, $parseDown;
     $content404 = collection('Static Content')->findOne(['name_slug' => 'page-not-found']);
     $app->response->status = "404";
@@ -31,6 +30,8 @@ function get404()
     return $app->render('views/404.php with layout.php', $data);
 }
 
+
+
 function fixRelativeLinks($content)
 {
     global $url;
@@ -38,11 +39,9 @@ function fixRelativeLinks($content)
 }
 
 $app->bind("/", function () use ($app) {
-    global $parseDown;
-    $topContent = collection('Static Content')->findOne(['name_slug' => 'home-page-top']);
-    return $app->render('views/home.php with layout.php', [
+    return $app->render('views/util/region_content.php with layout.php', [
         'title' => 'Home',
-        'topContent' => fixRelativeLinks($parseDown->text($topContent['content'])),
+        'regionName' => 'Home Page',
         'currentPage' => ''
     ]);
 });

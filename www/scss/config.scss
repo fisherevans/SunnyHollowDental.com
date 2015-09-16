@@ -1,16 +1,24 @@
 $compact-size: 900px;
 $mobile-size: 600px;
 
+$sans-font: 'Open Sans', 'Arial', 'sans-serif';
 
 $lt-lt-grey: #dfe6f6;
+$lt-green: #5e9ea0;
 $green: #01969a;
 $dark-green: #006669;
-
-
-$lt-green: #5e9ea0;
 $mid-dk-green: #007E82;
+
 $brown: #cfb18d;
 $dark-brown: #755c48;
 $light-grey: #cdd7f0;
 $dark-grey: #808080;
 $yellow: #ffe51f;
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+     -moz-transition: $args;
+      -ms-transition: $args;
+       -o-transition: $args;
+          transition: $args;
+}

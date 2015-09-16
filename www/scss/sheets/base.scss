@@ -31,6 +31,7 @@ body {
     margin: 0 auto;
     width: 90%;
     max-width: 990px;
+    height: 0;
   }
 
   .mobile-banner {
@@ -46,82 +47,75 @@ body {
   z-index: 20;
   white-space: nowrap;
   box-shadow: 0 0 2px 0 #444;
-}
 
-.navigation .element {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  border-right: 1px solid #007E82;
-}
+  .element {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid $mid-dk-green;
 
-.navigation .element.first {
-  border-left: 1px solid #007E82;
-}
+    &.first {
+      border-left: 1px solid $mid-dk-green;
+    }
 
-.navigation .element a {
-  display: block;
-  text-decoration: none;
-  color: #fff;
-  text-transform: uppercase;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 30px;
-  font-family: 'Open Sans', 'Arial', 'sans-serif';
-  font-size: 10.5pt;
-  font-weight: 300;
-  white-space: nowrap;
-  background-color: $green;
-  color: #ffffff;
-  -webkit-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  -moz-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  -ms-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  -o-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-}
+    a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 30px;
+      font-family: $sans-font;
+      font-size: 10.5pt;
+      font-weight: 300;
+      white-space: nowrap;
+      background-color: $green;
+      @include transition(color 0.2s ease, background 0.2s ease, opacity 0.2s ease);
 
-.navigation .element a:hover {
-  background-color: #007E82;
-}
+      &:hover {
+        background-color: $mid-dk-green;
+      }
+    }
 
-.navigation .element .sub-tree {
-  position: absolute;
-  top: 40px;
-  left: 0px;
-  padding-top: 3px;
-  width: auto;
-  max-height: 0px;
-  opacity: 0;
-  overflow: hidden;
-  -webkit-transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
-  -moz-transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
-  -ms-transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
-  -o-transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
-  transition: opacity 0.2s ease, max-height 0.2s, border 0.2s ease;
-}
+    .sub-tree {
+      position: absolute;
+      top: 40px;
+      left: 0px;
+      padding-top: 3px;
+      width: auto;
+      max-height: 0px;
+      opacity: 0;
+      overflow: hidden;
+      @include transition(opacity 0.2s ease, max-height 0.2s, border 0.2s ease);
 
-.navigation .element:hover .sub-tree {
-  opacity: 1;
-}
+      a {
+        position: relative;
+        display: block;
+        border: 1px solid $dark-green;
+        border-top-width: 0px;
+        text-align: left;
+      }
+    }
 
-.navigation .element:hover .sub-tree-2 {
-  max-height: calc(41px * 2);
-}
+    &:hover {
+      .sub-tree {
+        opacity: 1;
+      }
 
-.navigation .element:hover .sub-tree-3 {
-  max-height: calc(41px * 3);
-}
+      .sub-tree-2 {
+        max-height: calc(41px * 2);
+      }
 
-.navigation .element:hover .sub-tree-4 {
-  max-height: calc(41px * 4);
-}
+      .sub-tree-3 {
+        max-height: calc(41px * 3);
+      }
 
-.navigation .element .sub-tree a {
-  position: relative;
-  display: block;
-  border: 1px solid $dark-green;
-  border-top-width: 0px;
-  text-align: left;
+      .sub-tree-4 {
+        max-height: calc(41px * 4);
+      }
+    }
+  }
 }
 
 .page {
@@ -146,78 +140,85 @@ body {
 }
 
 .content {
-  background-color: #ffffff;
+  background-color: white;
   font-size: 0;
-}
 
-.content .tile {
-  position: relative;
-  display: inline-block;
-  width: 44%;
-  margin: 3%;
-}
+  .tile {
+    position: relative;
+    display: inline-block;
+    width: 47.5%;
+    margin: 1%;
 
-.content h1, .content h2, .content h3 {
-  text-transform: uppercase;
-  font-family: 'Open Sans', 'Arial', 'sans-serif';
-}
+    img.fill {
+      width: 80%;
+      box-shadow: 0 0 3px 0 black;
+    }
+  }
 
-.content h1 {
-  font-size: 30px;
-  font-weight: 300;
-}
+  h1, h2, h3 {
+    text-transform: uppercase;
+    font-family: $sans-font;
+  }
 
-.content p {
-  font-size: 14px;
-  font-family: 'Open Sans', 'Arial', 'sans-serif';
-}
+  h1 {
+    font-size: 24pt;
+    line-height: 30pt;
+    font-weight: 300;
+    margin-bottom: 8pt;
+  }
 
-.content .tile img.fill {
-  width: 80%;
-  box-shadow: 0 0 3px 0 #000000;
+  p {
+    font-size: 12pt;
+    line-height: 20pt;
+    font-family: $sans-font;
+    margin-bottom: 8pt;
+    margin-top: 8pt;
+
+    &.subtitle {
+      font-size: 11pt;
+      color: $dark-grey;
+      font-style: italic;
+    }
+  }
 }
 
 .footer {
-  background-color: #5e9ea0;
+  background-color: $lt-green;
 }
 
 /* ---------------- */
 
-.fadeColors {
-  -webkit-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  -moz-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  -ms-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  -o-transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  transition: color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+.fade-colors {
+  @include transition(color 0.2s ease, background 0.2s ease, opacity 0.2s ease);
 }
 
-.noUserSelect {
+.no-user-select {
   -webkit-user-select: none; /* Chrome all / Safari all */
   -moz-user-select: none; /* Firefox all */
   -ms-user-select: none; /* IE 10+ */
   user-select: none; /* Likely future */
 }
 
-.alignTop {
+.align-top {
   vertical-align: top;
 }
 
-.alignMiddle {
+.align-middle {
   vertical-align: middle;
 }
 
-.alignBottom {
+.align-bottom {
   vertical-align: bottom;
 }
 
-.alignLeft {
+.align-left {
   text-align: left;
 }
 
-.alignCenter {
+.align-center {
   text-align: center;
 }
 
-.alignRight {
+.align-right {
   text-align: right;
 }
