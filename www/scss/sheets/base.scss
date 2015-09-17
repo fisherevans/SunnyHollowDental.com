@@ -156,15 +156,28 @@ body {
   }
 
   h1, h2, h3 {
-    text-transform: uppercase;
     font-family: $sans-font;
+    margin-bottom: 8pt;
   }
 
   h1 {
     font-size: 24pt;
     line-height: 30pt;
+    text-transform: uppercase;
     font-weight: 300;
-    margin-bottom: 8pt;
+  }
+
+  h2 {
+    font-size: 20pt;
+    line-height: 24pt;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  h3 {
+    font-size: 13pt;
+    line-height: 20pt;
+    font-weight: 700;
   }
 
   p {
