@@ -2,7 +2,7 @@ body {
 }
 
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -29,13 +29,20 @@ body {
       width: 74px;
     }
 
-    .mobile-text {
+    .mobile-text, .mobile-hills {
       position: absolute;
       display: block;
-      bottom: 0;
       left: 100px;
       max-width: calc(100% - 165px);
       max-height: 80%;
+    }
+
+    .mobile-text {
+      top: 5px;
+    }
+
+    .mobile-hills {
+      bottom: 0;
     }
 
     .mobile-nav-toggle {
@@ -65,7 +72,7 @@ body {
     }
 
     .mobile-nav-toggle:hover {
-      background-color: $mid-dk-green;
+      background-color: $medium-dark-green;
     }
   }
 }
@@ -80,10 +87,8 @@ body {
   opacity: 1;
 }
 
-
-
 .navigation {
-  position: absolute;
+  position: fixed;
   top: 50px;
   width: 100%;
   bottom: 0;
@@ -98,8 +103,8 @@ body {
   .element {
     display: block;
     width: 100%;
-    border-right: 0px solid $mid-dk-green;
-    border-bottom: 1px solid $mid-dk-green;
+    border-right: 0px solid $medium-dark-green;
+    border-bottom: 1px solid $medium-dark-green;
 
     a {
       height: 40px;
@@ -123,10 +128,10 @@ body {
       a {
         position: relative;
         display: block;
-        color: $lt-lt-grey;
+        color: $light-grey;
         border: 0 solid $dark-green;
         font-size: 10pt;
-        border-top: 1px solid $mid-dk-green;
+        border-top: 1px solid $medium-dark-green;
         padding-left: 50px;
         text-align: left;
       }
@@ -134,7 +139,7 @@ body {
   }
 
   .element.first {
-    border-left: 0px solid $mid-dk-green;
+    border-left: 0px solid $medium-dark-green;
   }
 
   .element.last {
@@ -151,6 +156,11 @@ body {
 .show-mobile-nav .navigation {
   left: 0;
   opacity: 1;
+}
+
+
+.content, .footer {
+  padding: 8pt;
 }
 
 .page {

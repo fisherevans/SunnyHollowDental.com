@@ -30,7 +30,11 @@ function get404() {
     return $app->render('views/404.php with layout.php', $data);
 }
 
-
+function getStaticContent($name) {
+  global $app, $parseDown;
+  $content = collection('Static Content')->findOne(['name_slug' => $name]);
+  return $parseDown->text($content['content']);
+}
 
 function fixRelativeLinks($content)
 {
@@ -39,13 +43,88 @@ function fixRelativeLinks($content)
 }
 
 $app->bind("/", function () use ($app) {
-    return $app->render('views/util/region_content.php with layout.php', [
-        'title' => 'Home',
-        'regionName' => 'Home Page',
-        'currentPage' => ''
-    ]);
+  return $app->render('views/util/region_content.php with layout.php', [
+      'title' => 'Home',
+      'regionName' => 'Home Page'
+  ]);
 });
 
+$app->bind("/patient-info/forms", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'Forms',
+      'staticContent' => fixRelativeLinks(getStaticContent('patient-info-forms'))
+  ]);
+});
+
+$app->bind("/patient-info/education", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'Education',
+      'staticContent' => fixRelativeLinks(getStaticContent('patient-info-education'))
+  ]);
+});
+
+$app->bind("/patient-info", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'Patient Info',
+      'staticContent' => fixRelativeLinks(getStaticContent('patient-info'))
+  ]);
+});
+
+$app->bind("/our-office/gallery", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'Gallery',
+      'staticContent' => fixRelativeLinks(getStaticContent('our-office-gallery'))
+  ]);
+});
+
+$app->bind("/our-office/meet-the-dr", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'Meet the Doctor',
+      'staticContent' => fixRelativeLinks(getStaticContent('our-office-meet-the-doctor'))
+  ]);
+});
+
+$app->bind("/our-office/meet-the-staff", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'Meet the Staff',
+      'staticContent' => fixRelativeLinks(getStaticContent('our-office-meet-the-staff'))
+  ]);
+});
+
+$app->bind("/our-office", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'Our Office',
+      'staticContent' => fixRelativeLinks(getStaticContent('our-office'))
+  ]);
+});
+
+$app->bind("/the-practice/products", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'Products',
+      'staticContent' => fixRelativeLinks(getStaticContent('the-practice-products'))
+  ]);
+});
+
+$app->bind("/the-practice/services", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'Services',
+      'staticContent' => fixRelativeLinks(getStaticContent('the-practice-services'))
+  ]);
+});
+
+$app->bind("/the-practice", function () use ($app) {
+  return $app->render('views/util/static_content.php with layout.php', [
+      'title' => 'The Practice',
+      'staticContent' => fixRelativeLinks(getStaticContent('the-practice'))
+  ]);
+});
+
+$app->bind("/contact-us", function () use ($app) {
+  return $app->render('views/util/region_content.php with layout.php', [
+      'title' => 'Contact Us',
+      'regionName' => 'Contact Us'
+  ]);
+});
 
 $app->bind("*", function () use ($app) {
     return get404();

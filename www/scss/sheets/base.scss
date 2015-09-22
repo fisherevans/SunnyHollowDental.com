@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: $lt-lt-grey;
+  background-color: $light-grey;
 }
 
 .navigation, .header {
@@ -20,6 +20,7 @@ body {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  z-index: 20;
 }
 
 .header {
@@ -31,7 +32,6 @@ body {
     margin: 0 auto;
     width: 90%;
     max-width: 990px;
-    height: 0;
   }
 
   .mobile-banner {
@@ -44,7 +44,6 @@ body {
   border-top: 3px solid $dark-green;
   border-bottom: 3px solid $dark-green;
   font-size: 0;
-  z-index: 20;
   white-space: nowrap;
   box-shadow: 0 0 2px 0 #444;
 
@@ -52,10 +51,10 @@ body {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    border-right: 1px solid $mid-dk-green;
+    border-right: 1px solid $medium-dark-green;
 
     &.first {
-      border-left: 1px solid $mid-dk-green;
+      border-left: 1px solid $medium-dark-green;
     }
 
     a {
@@ -74,7 +73,7 @@ body {
       @include transition(color 0.2s ease, background 0.2s ease, opacity 0.2s ease);
 
       &:hover {
-        background-color: $mid-dk-green;
+        background-color: $medium-dark-green;
       }
     }
 
@@ -133,7 +132,7 @@ body {
   position: relative;
   display: block;
   width: 100%;
-  padding: 30px;
+  padding: 16pt;
   box-sizing: border-box;
   border: 1px solid $dark-green;
   border-top-width: 0px;
@@ -146,8 +145,8 @@ body {
   .tile {
     position: relative;
     display: inline-block;
-    width: 47.5%;
-    margin: 1%;
+    width: 48.5%;
+    margin: 0.5%;
 
     img.fill {
       width: 80%;
@@ -193,10 +192,31 @@ body {
       font-style: italic;
     }
   }
+
+  ul, ol {
+    font-family: $sans-font;
+    font-size: 12pt;
+    margin-left: 20pt;
+
+    li {
+
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    color: $link-blue;
+    @include transition(color ease 0.25s);
+
+    &:hover {
+      color: $link-blue-hover;
+    }
+  }
 }
 
 .footer {
-  background-color: $lt-green;
+  background-color: $light-green;
 }
 
 /* ---------------- */

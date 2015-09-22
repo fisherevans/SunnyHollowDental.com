@@ -16,13 +16,25 @@
   width: 95%;
 }
 
+.content, .footer {
+  padding: 12pt;
+}
+
 .content {
   .tile {
-    width: 94%;
-    margin: 3%;
+    width: 96%;
+    margin: 1% 2%;
   }
 }
 
-.alignRight {
+.align-center-compact {
   text-align: center;
+}
+
+.align-left-compact {
+  text-align: left;
+}
+
+.align-right-compact {
+  text-align: right;
 }

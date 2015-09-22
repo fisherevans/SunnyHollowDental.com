@@ -1,0 +1,14 @@
+.quick-info {
+  font-family: $sans-font;
+  font-size: 10pt;
+  display: block;
+  text-align: center;
+  color: $dark-grey;
+  line-height: 16pt;
+  margin-bottom: 8pt;
+  
+  div {
+    white-space: nowrap;
+    display: inline-block;
+  }
+}

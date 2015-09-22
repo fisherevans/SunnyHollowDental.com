@@ -2,6 +2,8 @@
 
 @media screen {
   @import 'sheets/base';
+  @import 'sheets/home';
+  @import 'sheets/quick-info';
   @media (max-width: $compact-size) {
     @import 'sheets/compact';
     @media (max-width: $mobile-size) {

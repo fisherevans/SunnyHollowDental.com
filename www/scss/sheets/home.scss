@@ -1,0 +1,26 @@
+.micro-news-item {
+  font-family: $sans-font;
+  padding: 8pt;
+  display: block;
+  color: black;
+  text-decoration: none;
+
+  .title {
+    font-size: 14pt;
+    font-weight: 700;
+  }
+
+  .date {
+    color: $dark-grey;
+    font-size: 10pt;
+    font-style: italic;
+  }
+
+  .tagline {
+    font-size: 11pt;
+  }
+
+  &:hover {
+    background-color: $dark-white;
+  }
+}
