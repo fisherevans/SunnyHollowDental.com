@@ -43,6 +43,10 @@ function fixRelativeLinks($content)
 }
 
 $app->bind("/", function () use ($app) {
+  $app->reroute("/home");
+});
+
+$app->bind("/home", function () use ($app) {
   return $app->render('views/util/region_content.php with layout.php', [
       'title' => 'Home',
       'regionName' => 'Home Page'
@@ -70,24 +74,17 @@ $app->bind("/patient-info", function () use ($app) {
   ]);
 });
 
-$app->bind("/our-office/gallery", function () use ($app) {
+$app->bind("/our-office/photo-gallery", function () use ($app) {
   return $app->render('views/util/static_content.php with layout.php', [
       'title' => 'Gallery',
-      'staticContent' => fixRelativeLinks(getStaticContent('our-office-gallery'))
-  ]);
-});
-
-$app->bind("/our-office/meet-the-dr", function () use ($app) {
-  return $app->render('views/util/static_content.php with layout.php', [
-      'title' => 'Meet the Doctor',
-      'staticContent' => fixRelativeLinks(getStaticContent('our-office-meet-the-doctor'))
+      'staticContent' => fixRelativeLinks(getStaticContent('our-office-photo-gallery'))
   ]);
 });
 
 $app->bind("/our-office/meet-the-staff", function () use ($app) {
-  return $app->render('views/util/static_content.php with layout.php', [
+  return $app->render('views/util/region_content.php with layout.php', [
       'title' => 'Meet the Staff',
-      'staticContent' => fixRelativeLinks(getStaticContent('our-office-meet-the-staff'))
+      'regionName' => 'Our Office - Meet the Staff'
   ]);
 });
 

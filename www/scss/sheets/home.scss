@@ -1,3 +1,29 @@
+.quick-info {
+  font-family: $sans-font;
+  font-size: 10pt;
+  display: block;
+  text-align: center;
+  color: $dark-grey;
+  line-height: 16pt;
+  margin-bottom: 8pt;
+
+  div {
+    white-space: nowrap;
+    display: inline-block;
+
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      color: $link-blue;
+      @include transition(color ease 0.25s);
+
+      &:hover {
+        color: $link-blue-hover;
+      }
+    }
+  }
+}
+
 .micro-news-item {
   font-family: $sans-font;
   padding: 8pt;

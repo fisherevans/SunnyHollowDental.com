@@ -21,7 +21,7 @@
 }
 
 .content {
-  .tile {
+  .tile, .tile.p25, .tile.p66, .tile.p75, .tile.p100 {
     width: 96%;
     margin: 1% 2%;
   }

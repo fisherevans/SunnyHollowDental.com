@@ -72,6 +72,10 @@ body {
       background-color: $green;
       @include transition(color 0.2s ease, background 0.2s ease, opacity 0.2s ease);
 
+      &.current {
+        background-color: $medium-green;
+      }
+
       &:hover {
         background-color: $medium-dark-green;
       }
@@ -147,16 +151,52 @@ body {
     display: inline-block;
     width: 48.5%;
     margin: 0.5%;
+    margin-bottom: 16pt;
 
     img.fill {
       width: 80%;
       box-shadow: 0 0 3px 0 black;
+      margin-bottom: 16pt;
+
+      &.centered {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+
+      &.p60 {
+        width: 60%;
+
+        &.centered {
+          margin-left: 20%;
+          margin-right: 20%;
+        }
+      }
+    }
+
+    &.p25 {
+      width: 23.5%;
+    }
+
+    &.p66 {
+      width: 64.5%;
+    }
+
+    &.p75 {
+      width: 73.5%;
+    }
+
+    &.p100 {
+      width: 98.5%;
     }
   }
 
   h1, h2, h3 {
     font-family: $sans-font;
     margin-bottom: 8pt;
+
+    &.centered {
+      text-align: center;
+    }
   }
 
   h1 {
@@ -185,11 +225,23 @@ body {
     font-family: $sans-font;
     margin-bottom: 8pt;
     margin-top: 8pt;
+    text-indent: 24pt;
 
     &.subtitle {
       font-size: 11pt;
       color: $dark-grey;
       font-style: italic;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      color: $link-blue;
+      @include transition(color ease 0.25s);
+
+      &:hover {
+        color: $link-blue-hover;
+      }
     }
   }
 
@@ -200,17 +252,6 @@ body {
 
     li {
 
-    }
-  }
-
-  a {
-    text-decoration: none;
-    font-weight: 700;
-    color: $link-blue;
-    @include transition(color ease 0.25s);
-
-    &:hover {
-      color: $link-blue-hover;
     }
   }
 }

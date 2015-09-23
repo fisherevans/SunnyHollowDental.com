@@ -1,11 +1,10 @@
 <?php
-    $uri =  $_SERVER['REQUEST_URI'];
     function startsWith($haystack, $needle) {
-      return substr($haystack, 0, strlen($needle)) === $needle;
+      $result = substr($haystack, 0, strlen($needle)) === $needle;
+      return $result;
     }
     function createNavLink($link, $text) {
-      global $uri;
-      $class = startsWith($uri, $link) ? "current" : "";
+      $class = startsWith($_SERVER['REQUEST_URI'], $link) ? "current" : "";
       return "<a class='" . $class . "' href='" . $link . "'>" . $text . "</a>";
     }
 ?><!DOCTYPE html>
@@ -33,14 +32,13 @@
     </div>
   </div>
   <div class="navigation">
-    <div class="element first"><?=createNavLink("/", "Home")?></div>
+    <div class="element first"><?=createNavLink("/home", "Home")?></div>
     <div class="element"><?=createNavLink("/news", "News")?></div>
     <div class="element">
       <?=createNavLink("/our-office", "Our Office")?>
       <div class="sub-tree sub-tree-3">
         <?=createNavLink("/our-office/meet-the-staff", "Meet the Staff")?>
-        <?=createNavLink("/our-office/meet-the-dr", "Meet the Doctor")?>
-        <?=createNavLink("/our-office/gallery", "Photo Gallery")?>
+        <?=createNavLink("/our-office/photo-gallery", "Photo Gallery")?>
       </div>
     </div>
     <div class="element">
@@ -71,6 +69,6 @@
 <!-- External Script Resources -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- Internal Script Resources -->
-<script src="js/script.js"></script>
+<script src="/js/script.js"></script>
 </body>
 </html>
